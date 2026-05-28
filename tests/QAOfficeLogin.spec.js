@@ -11,6 +11,7 @@ test.only('Ticketbox QA Office Load - Login failed (Invalid email)', async ({bro
     const password = page.locator("[placeholder='Enter your password']");
     const signin = page.locator("[type='submit']");
     const notification = page.locator("[aria-live='assertive']");
+    const welcome = page.locator("[aria-live='off']");
     
     //get title - assertion
    console.log (await page.title());
@@ -38,6 +39,8 @@ test.only('Ticketbox QA Office Load - Login failed (Invalid email)', async ({bro
    await password.fill('Pass123$');
    await signin.click();
    await expect (page).toHaveURL('https://qa-office\.ticketbox\.lk/');
+   console.log(await welcome.textContent());
+    await expect(welcome).toContainText('Login Successful');
 });
 
 
