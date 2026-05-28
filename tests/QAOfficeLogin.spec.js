@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 
-test.only('Ticketbox QA Office Load - Login failed (Invalid email)', async ({browser})=>
+test('Ticketbox QA Office Load - Login failed (Invalid email)', async ({browser})=>
 {
     //chrome plugins
     const context = await browser.newContext();
