@@ -8,6 +8,8 @@ test.only('Ticketbox QA Resale page load)', async ({browser})=>
     await page.goto("https://qa-resale.ticketbox.lk/");
 
     const accept = page.locator("//button[normalize-space()='Accept All']");
+    const person = page.locator('button:has(svg.lucide-user)').first();
+    const label = page.locator("//h3[contains(text(),'Welcome Back')]");
 
     //get title - assertion
    console.log (await page.title());
@@ -15,9 +17,9 @@ test.only('Ticketbox QA Resale page load)', async ({browser})=>
 
    //Cookie Acceptance
    await accept.click();
-   
-
+   await person.click();
+   console.log (await label.textContent());
+   await expect(label).toContainText("Welcome Back");
 
 });
-
 
