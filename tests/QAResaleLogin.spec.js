@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 
-test.only('Ticketbox QA Resale Load', async ({browser})=>
+test('Ticketbox QA Resale Load', async ({browser})=>
 {
     //chrome plugins
     const context = await browser.newContext();
