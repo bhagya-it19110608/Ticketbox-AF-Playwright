@@ -40,7 +40,7 @@ test('Ticketbox QA Office Load - Login failed (Invalid email)', async ({browser}
    await signin.click();
    await expect (page).toHaveURL('https://qa-office\.ticketbox\.lk/');
    console.log(await welcome.textContent());
-    await expect(welcome).toContainText('Login Successful');
+   await expect(welcome).toContainText('Login Successful');
 });
 
 
