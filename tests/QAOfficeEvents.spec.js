@@ -13,6 +13,7 @@ test.only('Ticketbox QA Office Load', async ({browser})=>
     const welcome = page.locator("[aria-live='off']");
     const events = page.locator("//span[text()='Events']");
     const description = page.locator("//p[text()='Manage your events and track performance']");
+    const evcard = page.locator("//h3[text()]");
     
     //get title - assertion
    console.log (await page.title());
@@ -32,6 +33,10 @@ test.only('Ticketbox QA Office Load', async ({browser})=>
    await expect(events.first()).toContainText('Events');
    console.log(await description.textContent());
    await expect(description).toContainText('Manage your events and track performance');
+
+  //Listing all events
+   const allevents = await evcard.allTextContents();
+   console.log(allevents);
 
 });
 
