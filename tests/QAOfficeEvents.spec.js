@@ -26,7 +26,12 @@ test.only('Ticketbox QA Office Load', async ({browser})=>
    console.log(await welcome.textContent());
    await expect(welcome).toContainText('Login Successful');
 
-
+//multiple parameter handled with query addressing
+   await events.first().click();
+   console.log(await events.first().textContent());
+   await expect(events.first()).toContainText('Events');
+   console.log(await description.textContent());
+   await expect(description).toContainText('Manage your events and track performance');
 
 });
 
