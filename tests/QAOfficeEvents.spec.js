@@ -13,6 +13,7 @@ test.only('Ticketbox QA Office Load', async ({browser})=>
     const welcome = page.locator("[aria-live='off']");
     const events = page.locator("//span[text()='Events']");
     const description = page.locator("//p[text()='Manage your events and track performance']");
+    const card = page.locator(".aspect-video.overflow-hidden img[alt]");
     const evcard = page.locator("//h3[text()]");
     
     //get title - assertion
@@ -34,7 +35,11 @@ test.only('Ticketbox QA Office Load', async ({browser})=>
    console.log(await description.textContent());
    await expect(description).toContainText('Manage your events and track performance');
 
-  //Listing all events
+  console.log(await card.first().textContent());
+  const allevent = await card.allTextContents();
+  console.log(allevent);
+  
+   //Listing all events
    const allevents = await evcard.allTextContents();
    console.log(allevents);
 
