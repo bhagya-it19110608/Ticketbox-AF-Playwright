@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 
-test('Ticketbox QA Office Load', async ({browser})=>
+test.only('Ticketbox QA Office Load', async ({browser})=>
 {
     //chrome plugins
     const context = await browser.newContext();
@@ -8,7 +8,7 @@ test('Ticketbox QA Office Load', async ({browser})=>
     await page.goto("https://qa-office.ticketbox.lk/login");
 
     const email = page.locator('#email');
-    const password = page.locator("[placeholder='Enter your password']");
+    const password = page.locator('#password');
     const signin = page.locator("[type='submit']");
     const welcome = page.locator("[aria-live='off']");
     const dashboard = page.locator("//h2[text()='Dashboard']");

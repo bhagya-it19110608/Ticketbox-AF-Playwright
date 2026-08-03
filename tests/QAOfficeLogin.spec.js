@@ -8,7 +8,7 @@ test('Ticketbox QA Office Load', async ({browser})=>
     await page.goto("https://qa-office.ticketbox.lk/login");
 
     const email = page.locator('#email');
-    const password = page.locator("[placeholder='Enter your password']");
+    const password = page.locator('#password');
     const signin = page.locator("[type='submit']");
     const notification = page.locator("[aria-live='assertive']");
     const welcome = page.locator("[aria-live='off']");
